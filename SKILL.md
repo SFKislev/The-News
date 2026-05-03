@@ -66,7 +66,7 @@ Action: call `daily-overviews` for the date range, then summarize the day-by-day
 | `israel` | Israel | `19` | `2024-07-04` |
 | `italy` | Italy | `17` | `2024-08-28` |
 | `japan` | Japan | `15` | `2024-09-07` |
-| `kenya` | Kenya | `1` | `2025-11-05` |
+| `kenya` | Kenya | `16` | `2025-11-05` |
 | `lebanon` | Lebanon | `17` | `2024-08-29` |
 | `netherlands` | Netherlands | `12` | `2024-09-05` |
 | `palestine` | Palestine | `17` | `2024-09-10` |
