@@ -114,3 +114,52 @@ Agent action: call `daily-overviews` for the date range, then summarize the day-
 ## Access
 
 The endpoint is public, open, read-only, and does not require authentication or an API key.
+
+## How can agents get their news?
+
+
+|                           | **The Hear API**                                                                  | **Web Fetch**                                                                       | **RSS Feed**                                                       |
+| :-------------------------- | :---------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------ | :------------------------------------------------------------------- |
+| **Source count**          | 12–39 sources per country                                                        | Agent-selected                                                                      | One feed per source; multi-source requires multiple feeds          |
+| **What the agent gets**   | Front-page lead of each outlet                                                    | Headlines, but surfaced via search algorithms rather than raw editorial choice      | Mix of main and secondary articles, undifferentiated by prominence |
+| **Global news**           | 20 countries, one call per country                                                | Possible, but requires a separate fetch per country                                 | Possible with multiple country-specific feeds                      |
+| **Ideological diversity** | Built in — each country covered across the spectrum; sources fixed and disclosed | Depends on which sites the agent chooses; search algorithm determines what surfaces | Depends on which feeds are included                                |
+| **Structured output**     | Clean JSON, timestamped                                                           | Raw HTML/text, requires parsing                                                     | XML, requires parsing                                              |
+| **Archive access**        | Yes — query any past timestamp                                                   | Yes, for sites that keep archives                                                   | Typically limited to recent items                                  |
+| **Speed**                 | Single API call per country                                                       | Multiple round-trips; slower for broad coverage                                     | Fast per feed; slower when aggregating many                        |
+
+## Response Structure
+
+```json
+{
+  "country": "germany",
+  "countryName": "Germany",
+  "asOfUtc": "2026-05-03T10:00:00Z",
+  "mode": "live",
+  "headlines": [
+    {
+      "sourceLabel": "Der Spiegel",
+      "headline": "Main headline text",
+      "subtitle": "Secondary line, may be empty",
+      "link": "https://...",
+      "capturedAt": "2026-05-03T09:55:00Z"
+    }
+  ],
+  "overviews": {
+    "current": {
+      "type": "ai_overview",
+      "headline": "AI-generated summary headline",
+      "summary": "AI-generated contextual summary of the current headlines",
+      "capturedAt": "2026-05-03T09:55:00Z",
+      "period": "current"
+    },
+    "previous": { "...": "same structure, prior snapshot" },
+    "yesterday": { "...": "same structure, previous day" }
+  }
+}
+```
+
+`headlines` contains one entry per source. `overviews` contains three AI-generated snapshots for context — current, previous, and yesterday. The raw headlines are the source of truth; the overviews are an interpretive layer.
+
+## Access
+The endpoint is public, open, read-only, and does not require authentication or an API key.
