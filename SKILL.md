@@ -78,5 +78,47 @@ Action: call `daily-overviews` for the date range, then summarize the day-by-day
 | `ukraine` | Ukraine | `12` | `2024-09-05` |
 | `us` | US | `39` | `2024-07-31` |
 
+## Response Structure
+
+```json
+{
+  "country": "germany",
+  "countryName": "Germany",
+  "asOfUtc": "2026-05-03T10:00:00Z",
+  "mode": "live",
+  "headlines": [
+    {
+      "sourceLabel": "Der Spiegel",
+      "headline": "Main headline text",
+      "subtitle": "Secondary line, may be empty",
+      "link": "https://...",
+      "capturedAt": "2026-05-03T09:55:00Z"
+    }
+  ],
+  "overviews": {
+    "current": {
+      "type": "ai_overview",
+      "headline": "AI-generated summary headline",
+      "summary": "AI-generated contextual summary",
+      "capturedAt": "2026-05-03T09:55:00Z",
+      "period": "current"
+    },
+    "previous": { "...": "same structure, prior snapshot" },
+    "yesterday": { "...": "same structure, previous day" }
+  }
+}
+```
+
+`headlines` contains one entry per source. `overviews` contains three AI-generated snapshots — current, previous, and yesterday. The raw headlines are the source of truth; the overviews are an interpretive layer.
+
+## How can agents get their news?
+
+|  | **The Hear API** | **Web Fetch** | **RSS Feed** |
+| :-- | :-- | :-- | :-- |
+| **Source count** | 12–39 sources per country | Agent-selected, mediated by search algorithms | One feed per source |
+| **What the agent gets** | Front-page lead of each outlet | Headlines mediated by search algorithms | Mix of main and secondary articles |
+| **Ideological diversity** | Built in — spectrum covered per country | Depends on agent's site selection: can be biased in a hidden way | Depends on feeds chosen; expanding requires effort and prior research |
+| **Speed** | Single API call per country | Multiple round-trips for broad coverage | Fast per feed; slower when aggregating many |
+
 ## Access
 The endpoint is public, open, read-only, and does not require authentication or an API key.
