@@ -155,3 +155,6 @@ The endpoint is public, open, read-only, and does not require authentication or 
 
 ## Access
 The endpoint is public, open, read-only, and does not require authentication or an API key.
+## Download History
+
+[![Download History](https://skill-history.com/chart/sfkislev/the-news.svg)](https://skill-history.com/sfkislev/the-news)
