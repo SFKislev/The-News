@@ -3,6 +3,7 @@
 ```bash
 npx skills add sfkislev/the-news
 ```
+[![skills.sh](https://skills.sh/b/SFKislev/The-News)](https://skills.sh/SFKislev/The-News)
 
 ## Overview
 
