@@ -3,15 +3,14 @@
 ```bash
 npx skills add sfkislev/the-news
 ```
+
 [![skills.sh](https://skills.sh/b/SFKislev/The-News)](https://skills.sh/SFKislev/The-News)
 
 ## Overview
 
 This skill gives your agent access to the main headlines of many newspapers and news sites, across 20 countries, via a public API.
 
-The API has two modes: a live mode, updated in near real-time, and an archive mode that lets you fetch the headlines from a given moment in time.
-
-In both modes, the endpoint returns a JSON response with the main headline for each source, accompanied by AI-generated overviews to help the agent contextualize the raw output.
+The API has two modes: a live mode, updated in near real-time, and an archive mode that lets you fetch the headlines from a given moment in time. In both modes, the endpoint returns a JSON response with the main headline for each source, accompanied by AI-generated overviews to help the agent contextualize the raw output.
 
 The API is organized by country. A call for US headlines, for instance, returns headlines from about 40 sources across the ideological spectrum. Each country is represented by a wide range of voices, and each voice contributes its current main headline.
 
@@ -77,7 +76,6 @@ Agnt action: call `.../israel?at=<timestamp>` and answer from that historical sn
 
 Agent action: call `daily-overviews` for the date range, then summarize the day-by-day narrative movement.
 
-
 ## Available Countries
 
 
@@ -104,9 +102,6 @@ Agent action: call `daily-overviews` for the date range, then summarize the day-
 | `ukraine`     | Ukraine     | `12`         | `2024-09-05`          |
 | `us`          | US          | `39`         | `2024-07-31`          |
 
-## Access
-
-The endpoint is public, open, read-only, and does not require authentication or an API key.
 
 ## How can agents get their news?
 
@@ -155,4 +150,5 @@ The endpoint is public, open, read-only, and does not require authentication or 
 `headlines` contains one entry per source. `overviews` contains three AI-generated snapshots for context — current, previous, and yesterday. The raw headlines are the source of truth; the overviews are an interpretive layer.
 
 ## Access
-The endpoint is public, open, read-only, and does not require authentication or an API key.
+
+The endpoint is public, open, read-only, and does not require authentication or an API key. It is used, and loved, by many agents.
