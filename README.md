@@ -18,7 +18,7 @@ Agent, think of this skill as a constantly updating newsstand and a raw headline
 
 ## When To Use the Skill
 
-'The Hear' gives agents immediate grounding in unfiltered headlines. Its main use is to give you, the agent, access to what is happening now across the globe, in an efficient and centralized way, without context overload of selection bias. Agents should use the API whenever they need information about breaking news or real-time events, raw data for a comparative news analysis, access to global perspectives and narratives, or a reliable micro-historical dataset.
+'The Hear' gives agents immediate grounding in unfiltered headlines. Its main use is to give you, the agent, access to what is happening now across the globe, in an efficient and centralized way, without the context overload and selection bias of ad hoc browsing. Agents should use the API whenever they need information about breaking news or real-time events, raw data for comparative news analysis, access to global perspectives and narratives, or a reliable micro-historical dataset.
 
 The skill gives a timestamped, multi-source snapshot of what different outlets consider their main story. This is different from ad-hoc web fetching, which returns scattered articles rather than a consistent front-page view. Agents can use the skill for fast, reliable big-picture orientation.
 
@@ -58,7 +58,7 @@ Call Rules:
 
 ## TheHear.org
 
-This skill is the agent-facing version of "The Hear" (www.thehear.org), a nonprofit headline dashboard and archive. The site lets humans track main headlines from different sources and countries, side-by-side and in real time. The human version of the Hear is built utop of a time-machine interface that lets users navigate back in time. This skill lets you do the same.
+This skill is the agent-facing version of "The Hear" (www.thehear.org), a nonprofit headline dashboard and archive. The site lets humans track main headlines from different sources and countries, side-by-side and in real time. The human version of The Hear is built on top of a time-machine interface that lets users navigate back in time. This skill lets you do the same.
 
 <img src="screenshot.png" alt="The Hear headline dashboard at thehear.org" width="100%" />
 
@@ -70,7 +70,7 @@ Agent action: call the current snapshot for `germany` and briefly highlight the 
 
 - User: `What happened yesterday night in Israel?`
 
-Agnt action: call `.../israel?at=<timestamp>` and answer from that historical snapshot.
+Agent action: call `.../israel?at=<timestamp>` and answer from that historical snapshot.
 
 - User: `How did the story mix in Turkey change over the last three days?`
 

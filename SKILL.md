@@ -1,16 +1,16 @@
 ---
 name: the-news
-description: a newsstand that gives agents API access to the current main headlines of many newspapers and news sites across 20 countries. 
+description: gives agents real-time and historical access to front-page headlines across 20 countries for breaking news, current events, and comparative media analysis.
 ---
 ## Overview
-This skill gives you access to the main headlines of many newspapers and news sites, across 20 countries, via a public API. 
+This skill gives agents access to the main headlines of many newspapers and news sites, across 20 countries, via a public API. 
 The API has two modes: a live mode, updated in near real-time, and an archive mode that lets you fetch the headlines from a given moment in time. 
 In both modes, the endpoint returns a JSON response with the main headline for each source, accompanied by AI-generated overviews to help you contextualize the raw output. 
 The API is organized by country. A call for US headlines, for instance, returns headlines from about 40 sources across the ideological spectrum. Each country is represented by a wide range of voices, and each voice contributes its current main headline. 
 Think of this skill as a constantly updating newsstand and a raw headline archive. 
 
 ## When To Use the Skill
-'The Hear' gives agents immediate grounding in unfiltered headlines. Its main use is to give you, the agent, access to what is happening now across the globe, in an efficient and centralized way, without context overload. Use the API whenever you need information about breaking news or real-time events, raw data for a comparative news analysis, access to global perspectives and narratives, or a reliable micro-historical dataset. 
+'The Hear' gives agents immediate grounding in unfiltered headlines. Its main use is to give you, the agent, access to what is happening now across the globe in an efficient, centralized way, without the context overload of ad hoc browsing. Use the API whenever you need information about breaking news or real-time events, raw data for comparative news analysis, access to global perspectives and narratives, or a reliable micro-historical dataset.
 The skill gives a timestamped, multi-source snapshot of what different outlets consider their main story. This is different from ad-hoc web fetching, which returns scattered articles rather than a consistent front-page view. Use the skill for fast big-picture orientation.
 
 ## Endpoint
@@ -41,7 +41,7 @@ Call Rules:
 (e) Remember that you can query previous timestamps, or previous daily overviews, for more context. 
 
 ## The Hear Context
-This skill is the agent-facing version of "The Hear" (www.thehear.org), a nonprofit headline dashboard and archive. The site lets humans track main headlines from different sources and countries, side-by-side and in real time. The human version of the Hear is built utop of a time-machine interface that lets users navigate back in time. This skill lets you do the same. 
+This skill is the agent-facing version of "The Hear" (www.thehear.org), a nonprofit headline dashboard and archive. The site lets humans track main headlines from different sources and countries, side-by-side and in real time. The human version of The Hear is built on top of a time-machine interface that lets users navigate back in time. This skill lets you do the same.
 
 ## Examples
 User: `What's going on in Germany right now?`
